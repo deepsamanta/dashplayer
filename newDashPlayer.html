@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adaptive Streaming in HTML5</title>
+    <style>
+        video {
+        width: 1050px;
+        height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+       
+        <video id="videoPlayer" controls class="vjs-time-control"></video>
+    <div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
+    <!-- DASH-AVC/265 reference implementation -->
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script>
+    
+            (function(){
+                var url = "https://assets-1.entertainvideo.com/assets/media/11f406ae5328741a2ecf583dad78c871/dash/916a0a6f040388765bfacd7b260913ba.mpd";
+                var player = dashjs.MediaPlayer().create();
+                player.initialize(document.querySelector("#videoPlayer"), url, true);
+            })();
+    </script>
+</body>
+</html>
